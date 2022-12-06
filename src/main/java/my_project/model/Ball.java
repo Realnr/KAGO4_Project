@@ -28,7 +28,7 @@ public class Ball extends GraphicalObject {
     @Override
     public void draw(DrawTool drawTool) {
         drawTool.drawFilledCircle(x,y,20);
-        drawTool.setCurrentColor(Color.RED);
+        drawTool.setCurrentHSBColor(200,100,100);
         drawTool.drawCircle(x,y,10);
         drawTool.drawCircle(x,y,5);
     }
