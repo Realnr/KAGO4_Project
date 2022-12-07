@@ -25,8 +25,6 @@ public class Tree extends GraphicalObject {
             //Blyatter
             drawTool.setCurrentHSBColor(126, 99, 54);
             drawTool.drawFilledCircle(x+(w/2),y-(r/2),w*1.5);
-
-
         }
     }
 }
