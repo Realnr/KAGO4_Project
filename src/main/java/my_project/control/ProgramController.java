@@ -4,7 +4,7 @@ import KAGO_framework.control.ViewController;
 import KAGO_framework.model.abitur.datenstrukturen.Queue;
 import my_project.model.*;
 import my_project.view.InputManager;
-
+import java.util.Objects;
 import java.awt.event.MouseEvent;
 
 /**
@@ -40,12 +40,19 @@ public class ProgramController {
         //viewController.draw(ball1);
         Sun s1 = new Sun();
         viewController.draw(s1);
-        Clouds c1 = new Clouds();
-        viewController.draw(c1);
-        House h1 = new House();
+        //Clouds c1 = new Clouds();
+        //viewController.draw(c1);
+        //int i = 0;
+        for (double i = 0; i <= 4; i++){
+            //System.out.println(i);
+            Cloud c1 = new Cloud(50+i*130,200,30);
+            viewController.draw(c1);
+        }
+        House h1 = new House(100,200,80 , 320);
         viewController.draw(h1);
         Tree t1 = new Tree();
         viewController.draw(t1);
+
 
     }
 
