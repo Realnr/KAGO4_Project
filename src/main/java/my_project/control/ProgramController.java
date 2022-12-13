@@ -48,8 +48,13 @@ public class ProgramController {
             Cloud c1 = new Cloud(50+i*130,200,30);
             viewController.draw(c1);
         }
+        
         House h1 = new House(100,200,80 , 320);
         viewController.draw(h1);
+
+        House h2 = new House(300,200,80 , 320);
+        viewController.draw(h2);
+
         Tree t1 = new Tree();
         viewController.draw(t1);
 
