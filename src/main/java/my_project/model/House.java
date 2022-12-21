@@ -16,6 +16,7 @@ public class House extends InteractiveGraphicalObject {
         width = w;
         height = h;
         this.speed = speed;
+        acceleration = 1;
     }
 
 
@@ -92,7 +93,12 @@ public class House extends InteractiveGraphicalObject {
         if(acceleration < 1){
             acceleration += 0.07*dt;
         }
-        keyPressed(32);{
+    }
+
+    @Override
+    public void keyPressed(int key) {
+        System.out.println(key);
+        if(key == 32){
             y = y - speed * acceleration;
         }
     }

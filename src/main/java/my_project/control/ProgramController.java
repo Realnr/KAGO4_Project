@@ -51,6 +51,7 @@ public class ProgramController {
         
         House h1 = new House(100,200,80 , 320,100);
         viewController.draw(h1);
+        viewController.register(h1);
 
         House h2 = new House(300,500,80 , 320,100);
         viewController.draw(h2);
