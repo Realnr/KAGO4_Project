@@ -1,16 +1,21 @@
 package my_project.model;
 
-import KAGO_framework.model.GraphicalObject;
+import KAGO_framework.model.InteractiveGraphicalObject;
 import KAGO_framework.view.DrawTool;
+import my_project.view.InputManager;
 
 import java.awt.*;
-public class House extends GraphicalObject {
+public class House extends InteractiveGraphicalObject {
 
-    public House(double Xpos, double Ypos,double w,double h){
+    private double speed;
+    private double acceleration;
+    private int timer;
+    public House(double Xpos, double Ypos,double w,double h, double speed){
         x = Xpos;
         y = Ypos;
         width = w;
         height = h;
+        this.speed = speed;
     }
 
 
@@ -27,13 +32,13 @@ public class House extends GraphicalObject {
         drawTool.drawFilledRectangle(x,y,width,height);
         //Dach
         drawTool.setCurrentHSBColor(0, 0, 0);
-        drawTool.drawFilledTriangle(x,y,x+width/2,y/5,x+width,y);
+        drawTool.drawFilledTriangle(x,y,x+width/2,y-height/3,x+width,y);
         //Umrandung von Dach
-        drawTool.drawTriangle(x,y,x+width/2,y/5,x+width,y);
+        drawTool.drawTriangle(x,y,x+width/2,y-height/3,x+width,y);
         //Umrandung von Body von Haus
         drawTool.drawRectangle(x,y,width,height);
         //DOOR
-        drawTool.drawFilledRectangle(x+width/4,y*2,40,120);
+        drawTool.drawFilledRectangle(x+width/4,y+height/2,40,160);
         //Fenster
         drawTool.setCurrentHSBColor(0, 0, 50);
         drawTool.drawFilledRectangle(x+width/16,y+width/4,20,64);
@@ -81,5 +86,14 @@ public class House extends GraphicalObject {
         drawTool.drawFilledRectangle(163,220,4,64);
 
          */
+    }
+    public void update(double dt){
+
+        if(acceleration < 1){
+            acceleration += 0.07*dt;
+        }
+        keyPressed(32);{
+            y = y - speed * acceleration;
+        }
     }
 }

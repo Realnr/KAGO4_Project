@@ -49,10 +49,10 @@ public class ProgramController {
             viewController.draw(c1);
         }
         
-        House h1 = new House(100,200,80 , 320);
+        House h1 = new House(100,200,80 , 320,100);
         viewController.draw(h1);
 
-        House h2 = new House(300,200,80 , 320);
+        House h2 = new House(300,500,80 , 320,100);
         viewController.draw(h2);
 
         Tree t1 = new Tree();
